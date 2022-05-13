@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 export PERL5LIB=$PWD/vendor/lib/perl5:$PERL5LIB
 
 ./vendor/cpanm --version

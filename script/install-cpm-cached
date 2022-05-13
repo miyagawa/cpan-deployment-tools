@@ -1,0 +1,17 @@
+#!/bin/bash
+set -ex
+export PERL5LIB=$PWD/vendor/lib/perl5:$PERL5LIB
+
+mkdir ~/.perl-cpm
+cp -r .cached/cpm ~/.perl-cpm/builds || true
+
+./vendor/cpanm -nq -L ./vendor App::cpm
+./vendor/bin/cpm --version
+
+# HACK to force build cache for all URLs
+perl -i -nlpe 's/(my \$TRUSTED_MIRROR = sub {)/$1 return 1;/' $(perldoc -lm App::cpm::Worker::Installer)
+
+time ./vendor/bin/cpm install -L local --resolver 02packages,file://$PWD/vendor/cache --prebuilt
+
+rm -fr .cached/cpm
+cp -fr ~/.perl-cpm/builds .cached/cpm

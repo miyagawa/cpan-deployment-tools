@@ -12,8 +12,10 @@ jobs:
         script:
           - install-cpanm
           - install-carmel
+          - install-carmel-cached
           - install-carton
           - install-cpm
+          - install-cpm-cached
     container:
       image: perl:5.34
     steps:
