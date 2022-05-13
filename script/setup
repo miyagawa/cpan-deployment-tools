@@ -1,6 +1,8 @@
 #!/bin/bash
 rm -rf vendor/cache
 
-cpanm -nq Carmel
+cpanm -nq Carmel Module::CPANfile
 carmel install
 carmel package
+
+cpanfile-dump | sort > modules.txt

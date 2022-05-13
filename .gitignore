@@ -1,2 +1,4 @@
 /.carmel
 /local
+/vendor/lib
+/vendor/bin

@@ -7,8 +7,8 @@ requires 'CPAN::Common::Index', '0.006';
 requires 'CPAN::DistnameInfo';
 
 requires 'DBI';
-requires 'DBD::SQLite';
 requires 'DBIx::Simple';
+requires 'Template::Toolkit';
 
 requires 'Starman', 0.4015;
 requires 'Server::Starter', 0.14;

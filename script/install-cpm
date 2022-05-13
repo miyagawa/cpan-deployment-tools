@@ -1,0 +1,5 @@
+#!/bin/bash
+export PERL5LIB=$PWD/local/lib:$PERL5LIB
+
+./script/cpanm -nq -L ./vendor App::cpm
+time ./vendor/bin/cpm install -L local --resolver 02packages,file://$PWD/vendor/cache

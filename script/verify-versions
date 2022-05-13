@@ -1,0 +1,17 @@
+#!/usr/bin/env perl
+use strict;
+use lib "local/lib/perl5";
+
+open my $fh, "modules.txt" or die $!;
+chomp( my @modules = <$fh> );
+
+for my $module ( sort @modules ) {
+    my $version = use_module($module);
+    print "$module ($version)\n";
+}
+
+sub use_module {
+    my $module = shift;
+    eval "require $module";
+    return $module->VERSION;
+}

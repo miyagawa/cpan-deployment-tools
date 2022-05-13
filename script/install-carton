@@ -1,0 +1,5 @@
+#!/bin/bash
+export PERL5LIB=$PWD/vendor/lib:$PERL5LIB
+
+./script/cpanm -nq -L ./vendor Carton
+time PERL_CARTON_MIRROR=file://$PWD/vendor/cache ./vendor/bin/carton install

@@ -1,0 +1,7 @@
+#!/bin/bash
+export PERL5LIB=$PWD/vendor/lib:$PERL5LIB
+
+./script/cpanm -nq -L ./vendor Carmel
+time (./vendor/bin/carmel install && ./vendor/bin/carmel rollout)
+
+
