@@ -1,6 +1,7 @@
 #!/bin/bash
 set -ex
 export PERL5LIB=$PWD/vendor/lib/perl5:$PERL5LIB
+export PERL_CARMEL_REPO=.carmel
 
 ./vendor/cpanm -nq -L ./vendor Carmel
 ./vendor/bin/carmel version

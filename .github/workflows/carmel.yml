@@ -1,0 +1,16 @@
+name: linux
+
+on:
+  - push
+
+jobs:
+  perl:
+    runs-on: ubuntu-latest
+    container:
+      image: perl:5.34
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install
+        run: ./script/install-carmel
+      - name: Verify
+        run: ./script/verify-versions
