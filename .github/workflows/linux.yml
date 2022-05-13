@@ -6,7 +6,8 @@ on:
 jobs:
   perl:
     runs-on: ubuntu-latest
-    strategy: fail-fast
+    strategy:
+      fail-fast: false
     matrix:
       script:
         - install-cpanm
