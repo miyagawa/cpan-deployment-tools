@@ -1,5 +1,5 @@
 #!/bin/bash
-export PERL5LIB=$PWD/local/lib:$PERL5LIB
+export PERL5LIB=$PWD/vendor/lib/perl5:$PERL5LIB
 
 ./script/cpanm --version
 
