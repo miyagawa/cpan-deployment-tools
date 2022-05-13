@@ -20,6 +20,16 @@ jobs:
       image: perl:5.34
     steps:
       - uses: actions/checkout@v1
+      - name: carmel cache
+        uses: actions/cache@v1
+        with:
+          path: .cache/carmel
+          key: ${{ runner.os }}-carmel-${{ hashFiles('cpanfile*') }}
+      - name: cpm cache
+        uses: actions/cache@v1
+        with:
+          path: .cache/cpm/builds
+          key: ${{ runner.os }}-cpm-${{ hashFiles('cpanfile*') }}
       - name: Install
         run: ./script/${{ matrix.script }}
       - name: Verify
