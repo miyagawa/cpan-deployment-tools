@@ -14,7 +14,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: .perl-cpm
-          key: ${{ runner.os }}-5.34-cpm-${{ hashFiles('cpanfile*') }}
+          key: ${{ runner.os }}-5.34-cpm-v2-${{ hashFiles('cpanfile*') }}
       - name: Install
         run: ./script/install-cpm
       - name: Verify
