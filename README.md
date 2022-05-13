@@ -4,7 +4,7 @@ This repository contains tools and CI actions to test CPAN dependency deployment
 
 ## Scripts
 
-Setup and intallation scripts are in `script` directory.
+Setup and intallation scripts are in `script` directory. The scripts are coded in a way it can bootstrap the installation a host without any CPAN configuration, using `cpanm` script in `vendor`.
 
 ## Maintainer
 

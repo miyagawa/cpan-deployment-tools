@@ -1,6 +1,8 @@
 #!/bin/bash
 rm -rf vendor/cache
 
+curl -so vendor/cpanm https://cpanmin.us/
+
 cpanm -nq Carmel Module::CPANfile
 carmel install
 carmel package
