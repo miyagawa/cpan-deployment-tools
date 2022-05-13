@@ -1,4 +1,4 @@
-name: linux
+name: cpm
 
 on:
   - push
