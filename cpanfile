@@ -9,7 +9,6 @@ requires 'CPAN::DistnameInfo';
 requires 'DBI';
 requires 'DBIx::Simple';
 requires 'Template::Toolkit';
-
 requires 'Starman', 0.4015;
 requires 'Server::Starter', 0.14;
 requires 'Net::Server::SS::PreFork';
