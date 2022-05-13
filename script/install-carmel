@@ -2,6 +2,8 @@
 export PERL5LIB=$PWD/vendor/lib:$PERL5LIB
 
 ./script/cpanm -nq -L ./vendor Carmel
+./vendor/bin/carmel version
+
 time (./vendor/bin/carmel install && ./vendor/bin/carmel rollout)
 
 

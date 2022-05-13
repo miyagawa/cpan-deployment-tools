@@ -1,0 +1,23 @@
+name: linux
+
+on:
+  - push
+
+jobs:
+  perl:
+    runs-on: ubuntu-latest
+    strategy: fail-fast
+    matrix:
+      script:
+        - install-cpanm
+        - install-carmel
+        - install-carton
+        - install-cpm
+    container:
+      image: perl:5.34
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install
+        run: ./script/${{ matrix.script }}
+      - name: Verify
+        run: ./script/verify-versions

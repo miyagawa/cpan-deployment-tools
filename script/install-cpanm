@@ -1,5 +1,7 @@
 #!/bin/bash
 export PERL5LIB=$PWD/local/lib:$PERL5LIB
 
+./script/cpanm --version
+
 time ./script/cpanm -nq -L local --from file://$PWD/vendor/cache --installdeps .
 
