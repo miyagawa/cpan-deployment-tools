@@ -5,4 +5,4 @@ export PERL5LIB=$PWD/vendor/lib/perl5:$PERL5LIB
 ./vendor/cpanm -nq -L ./vendor App::cpm
 ./vendor/bin/cpm --version
 
-time ./vendor/bin/cpm install -L local --resolver 02packages,file://$PWD/vendor/cache
+time HOME=. ./vendor/bin/cpm install -L local --resolver 02packages,file://$PWD/vendor/cache
