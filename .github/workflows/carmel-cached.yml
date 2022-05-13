@@ -14,7 +14,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: .carmel
-          key: ${{ runner.os }}-5.34-carmel-${{ hashFiles('cpanfile*') }}
+          key: ${{ runner.os }}-5.34-carmel-${{ hashFiles('cpanfile*', 'script/*carmel') }}
       - name: Install
         run: ./script/install-carmel
       - name: Verify

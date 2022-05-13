@@ -3,6 +3,10 @@ set -ex
 export PERL5LIB=$PWD/vendor/lib/perl5:$PERL5LIB
 
 ./vendor/cpanm -nq -L ./vendor App::cpm
+
+# HACK to enable build cache for local file
+perl -i -nlpe 's/(my \$TRUSTED_MIRROR = sub {)/$1 return 1;/' $(perldoc -lm App::cpm::Worker::Installer)
+
 ./vendor/bin/cpm --version
 
 time HOME=. ./vendor/bin/cpm install -L local --resolver 02packages,file://$PWD/vendor/cache
